@@ -1,0 +1,22 @@
+<ng-container [ngSwitch]="item.type" [formGroup]="group">
+    <div class="form-control" *ngSwitchCase="'input'">
+        <label [for]="item.key">{{ item.label }}</label>
+        <input class="form-input" [id]="item.key" [value]="item.value" [required]="item.required"
+               [formControlName]="item.key"/>
+    </div>
+    <div class="form-control" *ngSwitchCase="'currency'">
+        <label [for]="item.key">{{ item.label }}</label>
+        <span class="currency-symbol">{{ item.symbol == 'EUR' ? '€' : item.symbol == 'USD' ? '$' : ''}}</span>
+        <input class="form-input currency-input" [id]="item.key" [required]="item.required" type="number"
+               [value]="item.value" [formControlName]="item.key">
+    </div>
+    <div class="form-control" *ngSwitchCase="'date'">
+        <label [for]="item.key">{{ item.label }}</label>
+        <input class="form-input"
+               [matDatepicker]="datePicker" [id]="item.key" [required]="item.required" [value]="item.value"
+               [formControlName]="item.key">
+        <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+        <mat-datepicker #datePicker></mat-datepicker>
+    </div>
+    <span class="error-msg" *ngIf="isNotValid">{{ item.key }} is required</span>
+</ng-container>

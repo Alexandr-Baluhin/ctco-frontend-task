@@ -1,0 +1,9 @@
+<site-schema-loader-comp (uploaded)="setForms($event)"></site-schema-loader-comp>
+<section>
+    <span class="form-shortcut" *ngFor="let form of forms">
+        <a class="no-link" [routerLink]="'/business-form/' + form.id">
+            <img [src]="'assets/form-icon.png'">
+            <span class="shortcut-name">{{ form.name }}</span>
+        </a>
+    </span>
+</section>

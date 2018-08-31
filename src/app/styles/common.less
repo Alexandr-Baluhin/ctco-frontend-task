@@ -1,0 +1,72 @@
+@import '_global.less';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+/*------------------------------------*\
+    COMMON (OLD CSS)
+\*------------------------------------*/
+/*-------------------*\
+    $GENERIC
+\*-------------------*/
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+html, body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  color: @color-text;
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+.no-link {
+  text-decoration: none;
+  color: @color-1;
+}
+
+.form-control {
+  position: relative;
+  label {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 3px;
+    text-align: left;
+  }
+  mat-datepicker-toggle {
+    position: absolute;
+    right: 0;
+    top: 25px;
+  }
+}
+
+.form-input {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px 10px;
+  border: 1px solid rgba(74, 74, 74, 0.23137254901960785);
+  border-radius: 4px;
+  &[required] {
+    border-left: 3px solid @color-form-name;
+    &.ng-invalid {
+      border-left: 3px solid @color-cancel-link;
+    }
+  }
+  &.currency-input {
+    padding-left: 25px;
+  }
+}
+
+.currency-symbol {
+  position: absolute;
+  bottom: 17px;
+  left: 10px;
+  font-size: 18px;
+  color: #000;
+}

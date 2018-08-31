@@ -1,0 +1,68 @@
+@import '_colors.less';
+
+/** Text colors */
+@color-text: @color-3;
+@color-icon: @color-6;
+@color-form-name: @color-9;
+@color-cancel-link: @color-10;
+@color-error-msg: @color-13;
+
+/** Background colors */
+@color-bg-search-form: @color-5;
+@color-bg-business-form: @color-2;
+@color-bg-form-section: @color-11;
+
+/** Borders */
+@color-border-form-section: @color-12;
+
+/** Buttons */
+@color-btn-text: @color-4;
+@color-btn-text-hover: @color-7;
+@color-btn-border: @color-4;
+@color-btn-border-hover: @color-7;
+
+/** Dropdowns */
+@color-dropd-text: @color-4;
+@color-dropd-border: @color-3;
+@color-dropd-highlight: @color-4;
+
+/** Autocomplete */
+@color-autocomp-text: @color-4;
+@color-autocomp-border: @color-3;
+@color-autocomp-highlight: @color-4;
+
+/** Input */
+@color-input-text: @color-4;
+@color-input-border: @color-3;
+@color-input-highlight: @color-4;
+
+/** Media queries */
+@desktop: ~"only screen and (min-width: 1280px)";
+@tablet: ~"only screen and (min-width: 980px) and (max-width: 1279px)";
+@mobile: ~"only screen and (max-width: 979px)";
+@tabletAndMobile: ~"only screen and (max-width: 1279px)";
+@tabletAndMobileForHeader: ~"only screen and (max-width: 1180px)";
+@desktopForLanding: ~"only screen and (max-width: 1579px)";
+
+/** Mixins */
+.site-background {
+  background-image: -webkit-linear-gradient(45deg, #086a70, #116581);
+  background-image: -moz-linear-gradient(45deg, #086a70, #116581);
+  background-image: -ms-linear-gradient(45deg, #086a70, #116581);
+  background-image: -o-linear-gradient(45deg, #086a70, #116581);
+  background-image: linear-gradient(45deg, #086a70, #116581);
+}
+
+.main-font {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: @color-form-name;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.main-font-smaller {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: lighten(@color-form-name, 10%);
+  font-size: 14px;
+  font-weight: 600;
+}

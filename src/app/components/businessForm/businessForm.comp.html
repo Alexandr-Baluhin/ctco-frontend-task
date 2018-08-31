@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit()" #businessForm="ngForm">
+    <span class="header">
+        <a class="back-link" [routerLink]="'/'">Cancel</a>
+        <span class="form-name">{{ form.name }}</span>
+        <button type="submit" class="save-link" [disabled]="!businessForm.form.valid">Save</button>
+    </span>
+    <ng-container *ngFor="let item of form?.items">
+        <ng-container *ngIf="item.type == 'section'; else formItem">
+            <div class="form-section" [formGroup]="item.group">
+                <span class="form-section-header">{{ item.header }}</span>
+                <mat-grid-list [cols]="item.columns" rowHeight="120px">
+                    <mat-grid-tile *ngFor="let secondaryItem of item.items">
+                        <site-business-form-item-comp [item]="secondaryItem" [group]="item.group"></site-business-form-item-comp>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </div>
+        </ng-container>
+        <ng-template #formItem>
+            <div class="form-standalone-items">
+                <site-business-form-item-comp [item]="item" [group]="form.group"></site-business-form-item-comp>
+            </div>
+        </ng-template>
+    </ng-container>
+</form>

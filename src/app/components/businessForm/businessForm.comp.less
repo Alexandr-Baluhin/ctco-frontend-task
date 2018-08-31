@@ -1,0 +1,57 @@
+@import '../../styles/_global.less';
+
+form {
+  background: @color-bg-business-form;
+  margin: 50px 0;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.42);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  .back-link,
+  .save-link {
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .back-link {
+    color: lighten(@color-cancel-link, 10%);
+  }
+  .save-link {
+    color: lighten(@color-form-name, 10%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &[disabled] {
+      color: darken(@color-form-name, 50%)
+    }
+  }
+  .form-name {
+    .main-font;
+  }
+}
+
+.form-section {
+  &-header {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    padding: 10px 15px;
+    background: @color-bg-form-section;
+    border: 1px solid @color-border-form-section;
+    .main-font-smaller;
+  }
+  site-business-form-item-comp {
+    position: relative;
+    width: 100%;
+    margin: 0 15px 0 16px;
+  }
+}
+
+.form-standalone-items {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 15px;
+}

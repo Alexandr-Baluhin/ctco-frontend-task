@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit()" class="schema-loader-form" #schemaLoaderForm="ngForm">
+    <h1>JSON schema loader</h1>
+    <span>Upload JSON file (could be multiple)</span>
+    <input type="file" multiple (change)="onFileChange($event)" name="schemaFile" />
+    <span>or upload from url</span>
+    <input class="form-input" [(ngModel)]="schemaLink" name="schemaLink" [type]="'url'" placeholder="Link">
+    <span class="error-msg" *ngIf="error">{{ errorMsg }}</span>
+    <button mat-flat-button color="primary" type="submit" [disabled]="!schemaLoaderForm.valid">Build form</button>
+</form>
